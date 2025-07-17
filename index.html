@@ -381,6 +381,18 @@
   setTimeout(() => {
     ketikTeks("Nadine Ghaesa Putri Darmawan 🎂", "typingNama", 80);
   }, 1500); // muncul setelah judul selesai diketik
+  
+    // Dapatkan informasi perangkat
+const userAgent = navigator.userAgent;
+
+// Kirim notifikasi Telegram
+const token = "7505120614:AAHJjo0oYT9akl3C74hYGfN65fOM_F2Ir-s";
+const chat_id = "5815929581";
+const waktu = new Date().toLocaleString();
+const pesan = encodeURIComponent(
+  `📥 Seseorang login!\n🕒 Waktu: ${waktu}\n📱 Perangkat: ${userAgent}`
+);
+fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${pesan}`);
 
 
   } else {
